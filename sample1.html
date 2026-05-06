@@ -1,0 +1,1412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="KIMS Hospital — Multi-organ transplant centre in Ahmedabad. Kidney, heart and lung transplants with NABH and JCI accreditation.">
+<title>KIMS Hospital — Centre for Multi-organ Transplant</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* =========== RESET & BASE =========== */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: #1f2937;
+    background: white;
+    line-height: 1.6;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+  }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; text-decoration: none; }
+  ul { list-style: none; }
+  button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+  /* =========== COLOR TOKENS =========== */
+  :root {
+    --navy: #003a6b;
+    --navy-dark: #00264a;
+    --blue: #0073c4;
+    --blue-light: #e8f4fb;
+    --blue-pale: #f4f9fc;
+    --blue-border: #cfe1ee;
+    --orange: #d97a4a;
+    --green: #2d9d6f;
+    --text-dark: #003a6b;
+    --text-mid: #335a7a;
+    --text-soft: #5a7894;
+    --container: 1200px;
+  }
+
+  .container {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+
+  /* =========== TOP BAR =========== */
+  .topbar {
+    background: var(--navy);
+    color: white;
+    font-size: 12px;
+    padding: 8px 0;
+  }
+  .topbar-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+    align-items: center;
+  }
+  .topbar-info { opacity: 0.9; }
+  .topbar-social {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+  .topbar-social a {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s;
+  }
+  .topbar-social a:hover { background: var(--blue); }
+  .topbar-social svg { width: 12px; height: 12px; fill: white; }
+
+  /* =========== NAV =========== */
+  .nav {
+    background: white;
+    border-bottom: 1px solid var(--blue-border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .nav-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 0;
+  }
+  .logo { display: flex; align-items: center; gap: 10px; }
+  .logo-mark {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+  }
+  .logo-mark::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 2px solid var(--blue);
+    border-radius: 50%;
+  }
+  .logo-mark::after {
+    content: 'K';
+    position: absolute;
+    inset: 6px;
+    background: var(--blue);
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 14px;
+  }
+  .logo-text-main {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--navy);
+    line-height: 1.1;
+    letter-spacing: 0.3px;
+  }
+  .logo-text-sub {
+    font-size: 11px;
+    color: var(--blue);
+  }
+  .nav-links {
+    display: none;
+    gap: 22px;
+    align-items: center;
+  }
+  .nav-links a {
+    font-size: 14px;
+    color: var(--navy);
+    font-weight: 500;
+    transition: color 0.15s;
+  }
+  .nav-links a:hover, .nav-links a.active { color: var(--blue); }
+  .nav-cta {
+    background: var(--blue);
+    color: white !important;
+    padding: 9px 18px;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: background 0.15s;
+  }
+  .nav-cta:hover { background: var(--navy); }
+
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 8px;
+    background: none;
+    border: none;
+  }
+  .hamburger span {
+    width: 22px;
+    height: 2px;
+    background: var(--navy);
+    transition: transform 0.2s, opacity 0.2s;
+  }
+  .hamburger.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+  .mobile-menu {
+    display: none;
+    flex-direction: column;
+    background: white;
+    border-top: 1px solid var(--blue-border);
+    padding: 12px 16px;
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a {
+    padding: 12px 0;
+    font-size: 15px;
+    color: var(--navy);
+    border-bottom: 1px solid var(--blue-border);
+  }
+  .mobile-menu a:last-child { border-bottom: none; }
+
+  /* =========== HERO =========== */
+  .hero {
+    background: linear-gradient(135deg, #e8f4fb 0%, #d6eaf6 100%);
+    padding: 48px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before, .hero::after {
+    content: '';
+    position: absolute;
+    border: 1px solid rgba(0, 115, 196, 0.15);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+  .hero::before { width: 300px; height: 300px; right: -80px; top: -60px; }
+  .hero::after { width: 220px; height: 220px; right: -40px; top: -20px; border-color: rgba(0, 115, 196, 0.2); }
+  .hero-grid {
+    display: grid;
+    gap: 32px;
+    align-items: center;
+    position: relative;
+  }
+  .hero-eyebrow {
+    display: inline-block;
+    background: white;
+    color: var(--blue);
+    font-size: 12px;
+    font-weight: 500;
+    padding: 6px 14px;
+    border-radius: 14px;
+    margin-bottom: 16px;
+    border: 1px solid #b8d8ec;
+  }
+  .hero h1 {
+    font-size: clamp(28px, 6vw, 44px);
+    font-weight: 600;
+    line-height: 1.15;
+    color: var(--navy);
+    margin-bottom: 16px;
+    letter-spacing: -0.5px;
+  }
+  .hero p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--text-mid);
+    margin-bottom: 24px;
+    max-width: 480px;
+  }
+  .hero-cta-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .btn-primary {
+    background: var(--blue);
+    color: white;
+    padding: 13px 22px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background 0.15s;
+    border: none;
+  }
+  .btn-primary:hover { background: var(--navy); }
+  .btn-secondary {
+    background: white;
+    border: 1px solid var(--blue);
+    color: var(--blue);
+    padding: 13px 22px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background 0.15s;
+  }
+  .btn-secondary:hover { background: var(--blue-light); }
+  .btn-donate {
+    background: var(--green);
+    color: white;
+    padding: 13px 22px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background 0.15s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .btn-donate:hover { background: #1f7d56; }
+
+  .hero-card {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 4px 24px rgba(0, 58, 107, 0.1);
+    border: 1px solid rgba(0, 115, 196, 0.15);
+    position: relative;
+    z-index: 2;
+  }
+  .hero-card-title { font-size: 15px; font-weight: 600; color: var(--navy); margin-bottom: 4px; }
+  .hero-card-sub { font-size: 12px; color: var(--text-soft); margin-bottom: 16px; }
+  .field-label { font-size: 12px; color: var(--text-soft); margin-bottom: 4px; display: block; }
+  .field {
+    width: 100%;
+    background: var(--blue-pale);
+    border: 1px solid var(--blue-border);
+    border-radius: 4px;
+    padding: 10px 12px;
+    font-size: 14px;
+    color: var(--navy);
+    margin-bottom: 12px;
+    font-family: inherit;
+  }
+  .field:focus { outline: 2px solid var(--blue); outline-offset: -1px; }
+  .submit-btn {
+    width: 100%;
+    background: var(--navy);
+    color: white;
+    padding: 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background 0.15s;
+    border: none;
+  }
+  .submit-btn:hover { background: var(--blue); }
+
+  /* =========== STATS =========== */
+  .stats {
+    background: var(--navy);
+    color: white;
+    padding: 28px 0;
+  }
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    text-align: center;
+  }
+  .stat-num { font-size: clamp(22px, 5vw, 28px); font-weight: 600; }
+  .stat-label { font-size: 12px; opacity: 0.75; margin-top: 4px; }
+
+  /* =========== SECTION =========== */
+  section { padding: 56px 0; }
+  .section-head { text-align: center; margin-bottom: 32px; }
+  .section-eyebrow {
+    font-size: 12px;
+    color: var(--blue);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+  .section-title {
+    font-size: clamp(22px, 4.5vw, 30px);
+    font-weight: 600;
+    color: var(--navy);
+    line-height: 1.25;
+  }
+  .section-tagline {
+    font-size: 14px;
+    color: var(--text-mid);
+    margin-top: 12px;
+    font-style: italic;
+  }
+
+  /* =========== ABOUT =========== */
+  #about { background: white; }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 28px;
+    align-items: center;
+    margin-bottom: 48px;
+  }
+  .about-image {
+    height: 280px;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .about-image img { width: 100%; height: 100%; object-fit: cover; }
+  .about p {
+    font-size: 14px;
+    line-height: 1.75;
+    color: var(--text-mid);
+    margin-bottom: 16px;
+  }
+  .about-pillars {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-top: 20px;
+  }
+  .pillar { border-left: 3px solid var(--blue); padding-left: 12px; }
+  .pillar-title { font-size: 14px; font-weight: 600; color: var(--navy); margin-bottom: 2px; }
+  .pillar-desc { font-size: 12px; color: var(--text-soft); line-height: 1.5; }
+
+  /* Media Coverage strip */
+  .media-coverage {
+    background: var(--blue-pale);
+    border-radius: 12px;
+    padding: 28px 24px;
+  }
+  .media-coverage-head {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .media-coverage-eyebrow {
+    font-size: 11px;
+    color: var(--blue);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 500;
+    margin-bottom: 6px;
+  }
+  .media-coverage-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--navy);
+  }
+  .media-logos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    align-items: center;
+  }
+  .media-logo {
+    height: 50px;
+    background: white;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-soft);
+    font-weight: 600;
+    font-size: 14px;
+    border: 1px solid var(--blue-border);
+    font-family: Georgia, serif;
+    font-style: italic;
+  }
+
+  /* =========== SERVICES =========== */
+  #services { background: var(--blue-pale); }
+  .services-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .service-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    border-top: 3px solid var(--blue);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .service-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 58, 107, 0.08);
+  }
+  .service-image {
+    height: 180px;
+    overflow: hidden;
+    position: relative;
+  }
+  .service-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s;
+  }
+  .service-card:hover .service-image img { transform: scale(1.05); }
+  .service-body { padding: 24px; }
+  .service-icon {
+    width: 44px;
+    height: 44px;
+    background: var(--blue-light);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+  }
+  .service-title { font-size: 18px; font-weight: 600; color: var(--navy); margin-bottom: 6px; }
+  .service-desc { font-size: 13px; color: var(--text-soft); line-height: 1.6; margin-bottom: 14px; }
+  .service-list { font-size: 12px; color: var(--navy); line-height: 1.9; }
+  .service-link {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--blue);
+    margin-top: 14px;
+    display: inline-block;
+  }
+
+  /* =========== TEAM =========== */
+  #team { background: white; }
+  .team-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .doctor-card {
+    background: white;
+    border: 1px solid var(--blue-border);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+  .doctor-card:hover {
+    border-color: var(--blue);
+    box-shadow: 0 4px 16px rgba(0, 115, 196, 0.08);
+  }
+  .doctor-photo {
+    height: 220px;
+    overflow: hidden;
+    background: var(--blue-light);
+  }
+  .doctor-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .doctor-body { padding: 18px; }
+  .doctor-name { font-size: 16px; font-weight: 600; color: var(--navy); }
+  .doctor-role { font-size: 12px; color: var(--blue); margin-bottom: 12px; }
+  .doctor-detail-row {
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+    margin-bottom: 6px;
+    font-size: 12px;
+  }
+  .doctor-detail-label {
+    color: var(--text-soft);
+    font-weight: 500;
+    min-width: 75px;
+    flex-shrink: 0;
+  }
+  .doctor-detail-value {
+    color: var(--navy);
+    line-height: 1.5;
+  }
+  .view-all-link { text-align: center; margin-top: 24px; }
+  .view-all-link a { font-size: 13px; color: var(--blue); font-weight: 500; }
+
+  /* =========== PRODUCTS =========== */
+  #products { background: var(--blue-pale); }
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    margin-bottom: 28px;
+  }
+  .product-card {
+    background: white;
+    border-radius: 8px;
+    padding: 16px;
+    border: 1px solid var(--blue-border);
+    transition: transform 0.15s;
+  }
+  .product-card:hover { transform: translateY(-2px); }
+  .product-image {
+    height: 100px;
+    background: var(--blue-light);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+  }
+  .product-name { font-size: 13px; font-weight: 600; color: var(--navy); }
+  .product-desc { font-size: 11px; color: var(--text-soft); line-height: 1.5; margin-top: 4px; }
+
+  .product-endorsement {
+    background: white;
+    border-left: 3px solid var(--blue);
+    border-radius: 6px;
+    padding: 18px 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .endorsement-badge {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--blue-light);
+    color: var(--blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 600;
+    flex-shrink: 0;
+  }
+  .endorsement-text { flex: 1; min-width: 200px; }
+  .endorsement-quote { font-size: 14px; color: var(--navy); font-style: italic; line-height: 1.5; }
+  .endorsement-attr { font-size: 11px; color: var(--text-soft); margin-top: 4px; letter-spacing: 0.5px; }
+
+  /* =========== ORGAN DONATION =========== */
+  #donate {
+    background: linear-gradient(135deg, #2d9d6f 0%, #1f7d56 100%);
+    color: white;
+  }
+  #donate .section-eyebrow { color: #c8f0dc; }
+  #donate .section-title { color: white; }
+  .donate-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 28px;
+    align-items: center;
+  }
+  .donate-info p {
+    font-size: 14px;
+    line-height: 1.75;
+    opacity: 0.92;
+    margin-bottom: 16px;
+  }
+  .donate-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-top: 20px;
+  }
+  .donate-stat {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 14px;
+  }
+  .donate-stat-num { font-size: 22px; font-weight: 600; }
+  .donate-stat-label { font-size: 11px; opacity: 0.85; margin-top: 2px; }
+  .donate-form {
+    background: white;
+    color: var(--navy);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
+  }
+  .donate-form-title { font-size: 16px; font-weight: 600; margin-bottom: 4px; color: var(--navy); }
+  .donate-form-sub { font-size: 12px; color: var(--text-soft); margin-bottom: 18px; }
+  .organ-checkbox-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+  .organ-option {
+    background: var(--blue-pale);
+    border: 1px solid var(--blue-border);
+    border-radius: 6px;
+    padding: 9px 12px;
+    font-size: 13px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.15s;
+  }
+  .organ-option:hover { border-color: var(--green); }
+  .organ-option input { accent-color: var(--green); cursor: pointer; }
+  .organ-option input:checked + span { color: var(--green); font-weight: 500; }
+  .donate-submit {
+    width: 100%;
+    background: var(--green);
+    color: white;
+    padding: 13px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background 0.15s;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  .donate-submit:hover { background: #1f7d56; }
+  .donate-disclaimer {
+    font-size: 11px;
+    color: var(--text-soft);
+    margin-top: 12px;
+    line-height: 1.5;
+    text-align: center;
+  }
+  .donate-disclaimer a { color: var(--blue); text-decoration: underline; }
+
+  /* =========== FEEDBACK =========== */
+  #feedback { background: white; }
+  .feedback-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .feedback-card {
+    background: var(--blue-pale);
+    border-radius: 10px;
+    padding: 24px;
+    border-left: 3px solid var(--blue);
+  }
+  .feedback-quote-mark {
+    color: var(--blue);
+    font-size: 28px;
+    font-family: Georgia, serif;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .feedback-quote {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--text-mid);
+    margin-bottom: 16px;
+    font-style: italic;
+  }
+  .feedback-author { display: flex; align-items: center; gap: 10px; }
+  .feedback-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: var(--blue);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  .feedback-name { font-size: 13px; font-weight: 600; color: var(--navy); }
+  .feedback-meta { font-size: 11px; color: var(--text-soft); }
+
+  /* Video testimonial card */
+  .video-card {
+    background: var(--blue-pale);
+    border-radius: 10px;
+    overflow: hidden;
+    border-left: 3px solid var(--blue);
+    display: flex;
+    flex-direction: column;
+  }
+  .video-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #000;
+    cursor: pointer;
+  }
+  .video-thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.85;
+  }
+  .play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 56px;
+    height: 56px;
+    background: rgba(0, 115, 196, 0.95);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s;
+    pointer-events: none;
+  }
+  .video-wrapper:hover .play-button { transform: translate(-50%, -50%) scale(1.1); }
+  .play-button svg { width: 22px; height: 22px; fill: white; margin-left: 3px; }
+  .video-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+  .video-info { padding: 18px 20px; }
+  .video-title { font-size: 13px; font-weight: 600; color: var(--navy); margin-bottom: 2px; }
+  .video-meta { font-size: 11px; color: var(--text-soft); }
+
+  /* =========== CONTACT =========== */
+  #contact {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+    color: white;
+  }
+  #contact .section-eyebrow { color: #7fb8e0; }
+  #contact .section-title { color: white; }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .contact-item {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 18px;
+  }
+  .contact-icon {
+    width: 44px;
+    height: 44px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 18px;
+  }
+  .contact-label { font-size: 14px; font-weight: 600; }
+  .contact-value { font-size: 13px; opacity: 0.85; line-height: 1.6; }
+
+  .contact-social {
+    display: flex;
+    gap: 10px;
+    margin-top: 18px;
+  }
+  .contact-social a {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s;
+  }
+  .contact-social a:hover { background: var(--blue); }
+  .contact-social svg { width: 16px; height: 16px; fill: white; }
+
+  .contact-form {
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 10px;
+    padding: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+  }
+  .contact-form-title { font-size: 16px; font-weight: 600; margin-bottom: 16px; }
+  .contact-form .field {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.15);
+    color: white;
+  }
+  .contact-form .field::placeholder { color: rgba(255, 255, 255, 0.5); }
+  textarea.field { resize: vertical; min-height: 90px; font-family: inherit; }
+  .contact-submit {
+    width: 100%;
+    background: white;
+    color: var(--navy);
+    padding: 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background 0.15s;
+    border: none;
+  }
+  .contact-submit:hover { background: #e8f4fb; }
+
+  /* =========== FOOTER =========== */
+  footer {
+    background: var(--navy-dark);
+    color: rgba(255, 255, 255, 0.6);
+    padding: 24px 0;
+    font-size: 12px;
+  }
+  .footer-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+    align-items: center;
+  }
+  .footer-social {
+    display: flex;
+    gap: 10px;
+  }
+  .footer-social a {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s;
+  }
+  .footer-social a:hover { background: var(--blue); }
+  .footer-social svg { width: 14px; height: 14px; fill: white; }
+
+  /* =========== TABLET (>= 768px) =========== */
+  @media (min-width: 768px) {
+    .container { padding: 0 24px; }
+    .topbar-inner { flex-direction: row; justify-content: space-between; text-align: left; }
+    .stats-grid { grid-template-columns: repeat(4, 1fr); }
+    .stats-grid > div + div { border-left: 1px solid rgba(255,255,255,0.15); }
+    .hero { padding: 56px 0; }
+    .hero-grid { grid-template-columns: 1.2fr 1fr; }
+    .about-grid { grid-template-columns: 1fr 1.2fr; gap: 36px; }
+    .media-logos { grid-template-columns: repeat(5, 1fr); }
+    .services-grid { grid-template-columns: repeat(3, 1fr); }
+    .team-grid { grid-template-columns: repeat(3, 1fr); }
+    .products-grid { grid-template-columns: repeat(4, 1fr); }
+    .donate-grid { grid-template-columns: 1fr 1fr; gap: 36px; }
+    .feedback-grid { grid-template-columns: repeat(2, 1fr); }
+    .contact-grid { grid-template-columns: 1fr 1fr; }
+    .footer-inner { flex-direction: row; justify-content: space-between; text-align: left; }
+    section { padding: 64px 0; }
+  }
+
+  /* =========== DESKTOP (>= 1024px) =========== */
+  @media (min-width: 1024px) {
+    .nav-links { display: flex; }
+    .hamburger { display: none; }
+    .mobile-menu { display: none !important; }
+    .team-grid { grid-template-columns: repeat(5, 1fr); }
+    .feedback-grid { grid-template-columns: 1.2fr 1fr 1fr; }
+    .hero { padding: 72px 0; }
+    section { padding: 80px 0; }
+    .hero h1 { font-size: 44px; }
+    .section-title { font-size: 32px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR with social icons -->
+<div class="topbar">
+  <div class="container topbar-inner">
+    <div class="topbar-info">📞 24x7 Helpline: 1800-XXX-XXXX  ·  ✉ care@kimshospital.in</div>
+    <div class="topbar-social">
+      <span style="opacity: 0.7; margin-right: 4px;">Follow us:</span>
+      <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12"/></svg></a>
+      <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+      <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Twitter / X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+      <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+      <a href="https://wa.me/911800XXXXXXX" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg></a>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="#home" class="logo">
+      <div class="logo-mark"></div>
+      <div>
+        <div class="logo-text-main">KIMS Hospital</div>
+        <div class="logo-text-sub">Centre for Multi-organ Transplant</div>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#products">Products</a></li>
+      <li><a href="#donate" style="color: var(--green);">Donate Organs</a></li>
+      <li><a href="#feedback">Feedback</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#contact" class="nav-cta">Book appointment</a></li>
+    </ul>
+    <button class="hamburger" aria-label="Open menu" id="hamburger-btn">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#team">Team</a>
+    <a href="#products">Products</a>
+    <a href="#donate" style="color: var(--green); font-weight: 600;">Donate Organs ♥</a>
+    <a href="#feedback">Feedback</a>
+    <a href="#contact">Contact</a>
+    <a href="#contact" style="color: var(--blue); font-weight: 600;">Book appointment →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="home" class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-eyebrow">● NABH · JCI Accredited · NOTTO Registered</div>
+        <h1>Reliable care.<br>Renewed life.</h1>
+        <p>KIMS Hospital is a centre of excellence for kidney, heart and lung transplantation — combining specialist surgical teams, modern infrastructure and lifelong patient support.</p>
+        <div class="hero-cta-row">
+          <a href="#contact" class="btn-primary">Talk to a coordinator</a>
+          <a href="#donate" class="btn-donate">♥ Donate organs</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-title">Quick consultation</div>
+        <div class="hero-card-sub">Speak with our team in 30 minutes</div>
+        <label class="field-label">Service required</label>
+        <select class="field">
+          <option>Kidney transplant</option>
+          <option>Heart transplant</option>
+          <option>Lung transplant</option>
+          <option>General consultation</option>
+        </select>
+        <label class="field-label">Patient name</label>
+        <input type="text" class="field" placeholder="Full name">
+        <label class="field-label">Mobile number</label>
+        <input type="tel" class="field" placeholder="+91">
+        <button class="submit-btn">Request callback</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div><div class="stat-num">2,400+</div><div class="stat-label">Transplants performed</div></div>
+      <div><div class="stat-num">96%</div><div class="stat-label">1-year survival rate</div></div>
+      <div><div class="stat-num">45+</div><div class="stat-label">Specialist surgeons</div></div>
+      <div><div class="stat-num">22 yrs</div><div class="stat-label">Of clinical excellence</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about" class="about">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-eyebrow">About KIMS</div>
+      <div class="section-title">Built around the patient, backed by science</div>
+    </div>
+    <div class="about-grid">
+      <div class="about-image">
+        <img src="https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=800&q=80" alt="KIMS Hospital exterior" loading="lazy">
+      </div>
+      <div>
+        <p>Established with a vision to make life-saving transplant care accessible, KIMS Hospital has grown into one of India's most trusted multi-organ transplant centres. Our integrated approach brings together transplant surgeons, nephrologists, cardiologists, pulmonologists and intensivists under one roof.</p>
+        <p>From your first consultation through years of follow-up, our coordinators stay with you every step of the way.</p>
+        <div class="about-pillars">
+          <div class="pillar"><div class="pillar-title">Our mission</div><div class="pillar-desc">Quality care without compromise.</div></div>
+          <div class="pillar"><div class="pillar-title">Our vision</div><div class="pillar-desc">A healthier India, one life at a time.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Media Coverage -->
+    <div class="media-coverage">
+      <div class="media-coverage-head">
+        <div class="media-coverage-eyebrow">As featured in</div>
+        <div class="media-coverage-title">Media coverage</div>
+      </div>
+      <div class="media-logos">
+        <div class="media-logo">The Times</div>
+        <div class="media-logo">Indian Express</div>
+        <div class="media-logo">NDTV Health</div>
+        <div class="media-logo">DNA</div>
+        <div class="media-logo">Mint</div>
+      </div>
+      <div style="text-align: center; margin-top: 18px;">
+        <a href="#contact" style="font-size: 12px; color: var(--blue); font-weight: 500;">View all press coverage →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-eyebrow">Our services</div>
+      <div class="section-title">Comprehensive transplant care</div>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-image">
+          <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&q=80" alt="Kidney transplant care" loading="lazy">
+        </div>
+        <div class="service-body">
+          <div class="service-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0073c4" stroke-width="1.6"><path d="M8 3c-3 0-5 2.5-5 6s2 8 5 12c1 1.3 3 1.3 4 0 3-4 5-8.5 5-12s-2-6-5-6c-1.5 0-2.5 1-2.5 1S9.5 3 8 3z"/></svg>
+          </div>
+          <div class="service-title">Kidney transplant</div>
+          <div class="service-desc">Living donor, deceased donor and ABO-incompatible transplants with paired exchange support.</div>
+          <div class="service-list">▸ Pre-transplant evaluation<br>▸ Pediatric kidney transplant<br>▸ Post-op nephrology care</div>
+          <a href="#contact" class="service-link">Learn more →</a>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-image">
+          <img src="https://images.unsplash.com/photo-1628348070889-cb656235b4eb?w=800&q=80" alt="Heart transplant care" loading="lazy">
+        </div>
+        <div class="service-body">
+          <div class="service-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0073c4" stroke-width="1.6"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <div class="service-title">Heart transplant</div>
+          <div class="service-desc">Advanced heart failure care, LVAD bridge therapy and orthotopic heart transplantation.</div>
+          <div class="service-list">▸ Heart failure clinic<br>▸ LVAD &amp; mechanical support<br>▸ Pediatric cardiac transplant</div>
+          <a href="#contact" class="service-link">Learn more →</a>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-image">
+          <img src="https://images.unsplash.com/photo-1631815589968-fdb09a223b1e?w=800&q=80" alt="Lung transplant care" loading="lazy">
+        </div>
+        <div class="service-body">
+          <div class="service-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0073c4" stroke-width="1.6"><path d="M12 4v8M8 21c-2 0-3-1-3-3v-5c0-3 1-6 3-7M16 21c2 0 3-1 3-3v-5c0-3-1-6-3-7M5 13h3M16 13h3"/></svg>
+          </div>
+          <div class="service-title">Lung transplant</div>
+          <div class="service-desc">Single, double and combined heart-lung transplants for end-stage pulmonary disease.</div>
+          <div class="service-list">▸ ILD &amp; COPD evaluation<br>▸ ECMO bridge to transplant<br>▸ Post-op pulmonology care</div>
+          <a href="#contact" class="service-link">Learn more →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM (5 doctors) -->
+<section id="team">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-eyebrow">Our team</div>
+      <div class="section-title">Specialists you can trust with your life</div>
+    </div>
+    <div class="team-grid">
+      <div class="doctor-card">
+        <div class="doctor-photo"><img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=600&q=80" alt="Doctor portrait" loading="lazy"></div>
+        <div class="doctor-body">
+          <div class="doctor-name">Doctor Name</div>
+          <div class="doctor-role">Director, Renal Transplant</div>
+          <div class="doctor-detail-row"><span class="doctor-detail-label">Education:</span><span class="doctor-detail-value">MBBS, MS, MCh (Urology), AIIMS</span></div>
+          <div class="doctor-detail-row"><span class="doctor-detail-label">Experience:</span><span class="doctor-detail-value">22 years · 800+ transplants</span></div>
+        </div>
+      </div>
+      <div class="doctor-card">
+        <div class="doctor-photo"><img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=600&q=80" alt="Doctor portrait" loading="lazy"></div>
+        <div class="doctor-body">
+          <div class="doctor-name">Doctor Name</div>
+          <div class="doctor-role">Chief, Cardiac Surgery</div>
+          <div class="doctor-detail-row"><span class="doctor-detail-label">Education:</span><span class="doctor-detail-value">MBBS, MS, MCh (CTVS), FRCS</span></div>
+          <div class="doctor-detail-row"><span class="doctor-detail-label">Experience:</span><span class="doctor-detail-value">18 years · 350+ transplants</span></div>
+        </div>
+      </div>
+      <div class="doctor-card">
+        <div class="doctor-photo"><img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=600&q=80" alt="Doctor portrait" loading="lazy"></div>
+        <div class="doctor-body">
+          <div class="doctor-name">Doctor Name</div>
+          <div class="doctor-role">Lead, Lung Transplant</div>
+          <div class="doctor-detail-row"><span class="doctor-detail-label">Education:</span><span class="doctor-detail-value">MBBS, MD, DM (Pulmonology)</span></div>
+          <div class="doctor-detail-row"><span class="doctor-detail-label">Experience:</span><span class="doctor-detail-value">15 years · 200+ transplants</span></div>
+        </div>
+      </div>
+      <div class="doctor-card">
+        <div class="doctor-photo"><img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?w=600&q=80" alt="Doctor portrait" loading="lazy"></div>
+        <div class="doctor-body">
+          <div class="doctor-name">Doctor Name</div>
+          <div class="doctor-role">ICU &amp; Anaesthesia</div>
+          <div class="doctor-detail-row"><span class="doctor-detail-label">Education:</span><span class="doctor-detail-value">MBBS, MD (Anaesthesia), FRCA</span></div>
+          <div class="doctor-detail-row"><span class="doctor-detail-label">Experience:</span><span class="doctor-detail-value">20 years experience</span></div>
+        </div>
+      </div>
+      <div class="doctor-card">
+        <div class="doctor-photo"><img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=600&q=80" alt="Doctor portrait" loading="lazy"></div>
+        <div class="doctor-body">
+          <div class="doctor-name">Doctor Name</div>
+          <div class="doctor-role">Senior Nephrologist</div>
+          <div class="doctor-detail-row"><span class="doctor-detail-label">Education:</span><span class="doctor-detail-value">MBBS, MD (Medicine), DM (Nephro)</span></div>
+          <div class="doctor-detail-row"><span class="doctor-detail-label">Experience:</span><span class="doctor-detail-value">17 years experience</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="view-all-link"><a href="#contact">View all 45 specialists →</a></div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-eyebrow">Healthcare products</div>
+      <div class="section-title">Everything your recovery needs</div>
+      <div class="section-tagline">One of the best medical device suppliers in Ahmedabad.</div>
+    </div>
+    <div class="products-grid">
+      <div class="product-card">
+        <div class="product-image">
+          <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#0073c4" stroke-width="1.4"><rect x="6" y="3" width="12" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h4"/></svg>
+        </div>
+        <div class="product-name">Immunosuppressants</div>
+        <div class="product-desc">Genuine medications with home delivery</div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#0073c4" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        </div>
+        <div class="product-name">Home dialysis kits</div>
+        <div class="product-desc">Peritoneal dialysis supplies and training</div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#0073c4" stroke-width="1.4"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg>
+        </div>
+        <div class="product-name">Cardiac monitors</div>
+        <div class="product-desc">Holter, BP and remote monitoring devices</div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#0073c4" stroke-width="1.4"><path d="M12 4v8M8 21c-2 0-3-1-3-3v-5c0-3 1-6 3-7M16 21c2 0 3-1 3-3v-5c0-3-1-6-3-7"/></svg>
+        </div>
+        <div class="product-name">Pulmonary care</div>
+        <div class="product-desc">Oxygen concentrators &amp; nebulisers</div>
+      </div>
+    </div>
+    <div class="product-endorsement">
+      <div class="endorsement-badge">★</div>
+      <div class="endorsement-text">
+        <div class="endorsement-quote">"Good product knowledge and excellent after-sales support."</div>
+        <div class="endorsement-attr">— Verified buyer feedback</div>
+      </div>
+      <a href="#contact" style="font-size: 13px; color: var(--blue); font-weight: 500;">Browse catalogue →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ORGAN DONATION -->
+<section id="donate">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-eyebrow">Be a hero</div>
+      <div class="section-title">Pledge to donate your organs</div>
+    </div>
+    <div class="donate-grid">
+      <div class="donate-info">
+        <p>One organ donor can save up to eight lives and improve the lives of many more. By pledging your organs, you give the gift of life to someone in need — a child, a parent, a partner, a friend.</p>
+        <p>Take the first step today. Our coordinators will contact you to explain the process and help you register with NOTTO, India's official organ donation registry.</p>
+        <div class="donate-stats">
+          <div class="donate-stat">
+            <div class="donate-stat-num">8 lives</div>
+            <div class="donate-stat-label">Saved by one donor</div>
+          </div>
+          <div class="donate-stat">
+            <div class="donate-stat-num">5 lakh+</div>
+            <div class="donate-stat-label">Indians awaiting transplant</div>
+          </div>
+        </div>
+      </div>
+
+      <form class="donate-form" onsubmit="event.preventDefault(); alert('Thank you for pledging. Our team will contact you within 24 hours.');">
+        <div class="donate-form-title">Pledge to donate ♥</div>
+        <div class="donate-form-sub">It takes less than a minute</div>
+
+        <label class="field-label">Full name</label>
+        <input type="text" class="field" placeholder="Your full name" required>
+
+        <label class="field-label">Contact number</label>
+        <input type="tel" class="field" placeholder="+91" required>
+
+        <label class="field-label">City</label>
+        <input type="text" class="field" placeholder="City" required>
+
+        <label class="field-label">Organs you wish to pledge</label>
+        <div class="organ-checkbox-grid">
+          <label class="organ-option"><input type="checkbox" name="organ" value="kidney"><span>Kidney</span></label>
+          <label class="organ-option"><input type="checkbox" name="organ" value="heart"><span>Heart</span></label>
+          <label class="organ-option"><input type="checkbox" name="organ" value="lungs"><span>Lungs</span></label>
+          <label class="organ-option"><input type="checkbox" name="organ" value="liver"><span>Liver</span></label>
+          <label class="organ-option"><input type="checkbox" name="organ" value="cornea"><span>Cornea</span></label>
+          <label class="organ-option"><input type="checkbox" name="organ" value="all"><span>All organs</span></label>
+        </div>
+
+        <button type="submit" class="donate-submit">♥ Contact the hospital</button>
+
+        <div class="donate-disclaimer">
+          This form expresses your interest. Official pledges are registered via <a href="https://notto.abdm.gov.in" target="_blank" rel="noopener">NOTTO</a>, India's national registry.
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FEEDBACK with video -->
+<section id="feedback">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-eyebrow">Patient feedback</div>
+      <div class="section-title">Stories that keep us going</div>
+    </div>
+    <div class="feedback-grid">
+      <!-- Video testimonial -->
+      <div class="video-card">
+        <div class="video-wrapper" data-video-id="dQw4w9WgXcQ">
+          <img src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=800&q=80" alt="Patient story video" class="video-thumbnail" loading="lazy">
+          <div class="play-button">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+        </div>
+        <div class="video-info">
+          <div class="video-title">"A new chapter, made possible"</div>
+          <div class="video-meta">Watch Anita's story · Heart recipient · 2024</div>
+        </div>
+      </div>
+
+      <div class="feedback-card">
+        <div class="feedback-quote-mark">"</div>
+        <div class="feedback-quote">From listing to recovery, the coordinator team felt like family. I'm back to work six months after my heart transplant.</div>
+        <div class="feedback-author">
+          <div class="feedback-avatar">RS</div>
+          <div><div class="feedback-name">Ramesh Sharma</div><div class="feedback-meta">Heart transplant · 2024</div></div>
+        </div>
+      </div>
+      <div class="feedback-card">
+        <div class="feedback-quote-mark">"</div>
+        <div class="feedback-quote">My daughter donated her kidney to me here. The care for both of us was exceptional. The team explained every step.</div>
+        <div class="feedback-author">
+          <div class="feedback-avatar">PD</div>
+          <div><div class="feedback-name">Prakash Desai</div><div class="feedback-meta">Kidney transplant · 2023</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-eyebrow">Contact us</div>
+      <div class="section-title">Reach out, we're here to help</div>
+    </div>
+    <div class="contact-grid">
+      <div>
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div><div class="contact-label">Visit us</div><div class="contact-value">KIMS Hospital, SG Highway, Ahmedabad, Gujarat 380054</div></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📞</div>
+          <div><div class="contact-label">Call us</div><div class="contact-value">+91 79 XXXX XXXX<br>24x7 Emergency: 1800-XXX-XXXX</div></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">✉</div>
+          <div><div class="contact-label">Email us</div><div class="contact-value">care@kimshospital.in<br>info@kimshospital.in</div></div>
+        </div>
+        <div style="margin-top: 18px;">
+          <div style="font-size: 12px; opacity: 0.75; margin-bottom: 10px;">CONNECT WITH US</div>
+          <div class="contact-social">
+            <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12"/></svg></a>
+            <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+            <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Twitter / X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+            <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+            <a href="https://wa.me/911800XXXXXXX" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg></a>
+          </div>
+        </div>
+      </div>
+      <form class="contact-form" onsubmit="event.preventDefault(); alert('Thank you. We will be in touch shortly.');">
+        <div class="contact-form-title">Send us a message</div>
+        <input type="text" class="field" placeholder="Your name" required>
+        <input type="text" class="field" placeholder="Email or phone" required>
+        <textarea class="field" placeholder="Your message" required></textarea>
+        <button type="submit" class="contact-submit">Send message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container footer-inner">
+    <div>© 2026 KIMS Hospital. NABH &amp; JCI Accredited.</div>
+    <div class="footer-social">
+      <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12"/></svg></a>
+      <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+      <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Twitter / X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+      <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+    </div>
+    <div>Privacy · Terms · Sitemap</div>
+  </div>
+</footer>
+
+<script>
+  // Mobile menu toggle
+  const hamburger = document.getElementById('hamburger-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+  });
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+    });
+  });
+
+  // Active nav highlight on scroll
+  const sections = document.querySelectorAll('section');
+  const navLinks = document.querySelectorAll('.nav-links a:not(.nav-cta)');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(sec => {
+      const top = sec.offsetTop - 100;
+      if (window.scrollY >= top) current = sec.id;
+    });
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === '#' + current) link.classList.add('active');
+    });
+  });
+
+  // Lazy YouTube embed (load iframe only on click — saves bandwidth)
+  document.querySelectorAll('.video-wrapper').forEach(wrapper => {
+    wrapper.addEventListener('click', () => {
+      const videoId = wrapper.dataset.videoId;
+      if (!videoId) return;
+      const iframe = document.createElement('iframe');
+      iframe.className = 'video-iframe';
+      iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+      iframe.title = 'Patient testimonial video';
+      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+      iframe.allowFullscreen = true;
+      wrapper.innerHTML = '';
+      wrapper.appendChild(iframe);
+    });
+  });
+</script>
+</body>
+</html>
