@@ -1,4 +1,4 @@
-# Privacy Policy — PaperScan
+**PaperScan**
 
 **Last updated:** 19 May 2026
 
