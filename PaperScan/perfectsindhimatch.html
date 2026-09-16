@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sindhi Sangam — The Trusted Matrimonial Platform for Global Sindhis</title>
+  <meta name="description" content="Find verified Sindhi brides and grooms worldwide. Dedicated community matchmaking respecting Nukh exogamy, sub-communities (Amil, Bhaiband, Sahiti), and 100% Aadhaar verification.">
+  
+  <!-- Tailwind CSS Engine -->
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  
+  <!-- Premium Modern Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  
+  <style>
+    body { font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif; }
+    .font-serif-brand { font-family: 'Playfair Display', Georgia, serif; }
+    .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+    .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 9999px; }
+  </style>
+</head>
+<body class="bg-white text-slate-900 antialiased selection:bg-rose-900 selection:text-white">
+
+  <!-- ==================== TOP COMMUNITY ANNOUNCEMENT BAR ==================== -->
+  <div class="bg-rose-950 text-rose-100 text-xs py-2 px-4 border-b border-rose-900/50">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
+      <div class="flex items-center gap-2">
+        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-amber-400 text-rose-950">NEW</span>
+        <span>Honoring Traditional Sindhi Nukh Exogamy &amp; 100% DigiLocker ID Checks</span>
+      </div>
+      <div class="flex items-center gap-4 text-rose-200/80">
+        <span>Global Hubs: Mumbai • Dubai • London • Ahmedabad</span>
+        <a href="#pricing" class="text-amber-300 font-semibold hover:underline">One-Time ₹149 Activation</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== MAIN NAVIGATION HEADER ==================== -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-rose-900 flex items-center justify-center text-amber-400 font-bold shadow-xs">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+          </svg>
+        </div>
+        <div>
+          <span class="font-serif-brand text-2xl font-bold tracking-tight text-rose-950">Sindhi Sangam</span>
+          <span class="block text-[11px] font-semibold text-slate-500 uppercase tracking-widest -mt-1">Matrimonial Portal</span>
+        </div>
+      </a>
+
+      <!-- SEO Nav Links -->
+      <nav class="hidden lg:flex items-center gap-8 text-sm font-semibold text-slate-600">
+        <a href="#how-it-works" class="hover:text-rose-900 transition-colors">How It Works</a>
+        <a href="#communities" class="hover:text-rose-900 transition-colors">Sindhi Communities</a>
+        <a href="#nukh-system" class="hover:text-rose-900 transition-colors">Nukh Matching</a>
+        <a href="#pricing" class="hover:text-rose-900 transition-colors">Pricing &amp; Plans</a>
+        <a href="#stories" class="hover:text-rose-900 transition-colors">Success Stories</a>
+        <a href="#faq" class="hover:text-rose-900 transition-colors">FAQ</a>
+      </nav>
+
+      <!-- Auth Action Buttons -->
+      <div class="flex items-center gap-3">
+        <button onclick="openAuthModal('signin')" class="px-4 py-2 text-sm font-semibold text-slate-700 hover:text-slate-900 hover:bg-slate-100 rounded-xl transition-colors cursor-pointer">
+          Sign In
+        </button>
+        <button onclick="openAuthModal('signup')" class="px-5 py-2.5 bg-rose-900 hover:bg-rose-950 text-white rounded-xl text-sm font-bold shadow-xs hover:shadow-md transition-all cursor-pointer">
+          Register Free
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ==================== HERO SECTION (HIGH CONVERTING + SEO) ==================== -->
+  <section class="relative bg-gradient-to-b from-[#FAF7F2] via-white to-white pt-16 pb-24 overflow-hidden border-b border-slate-100">
+    
+    <!-- Subtle Background Accent -->
+    <div class="absolute top-0 inset-x-0 h-64 bg-gradient-to-b from-rose-50/70 to-transparent pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      
+      <!-- Headings -->
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-100 text-rose-900 text-xs font-bold uppercase tracking-wider mb-4 border border-rose-200">
+          💍 Exclusively for the Global Sindhi Community
+        </div>
+        <h1 class="font-serif-brand text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-950 tracking-tight leading-[1.15]">
+          Where Global Sindhis Find Their Forever Match
+        </h1>
+        <p class="mt-5 text-base sm:text-lg text-slate-600 leading-relaxed">
+          The only matrimonial platform built specifically for Sindhi families. Verified with DigiLocker, honoring traditional Nukh exogamy, and connecting verified candidates across India, the Gulf, and the Western diaspora.
+        </p>
+      </div>
+
+      <!-- HERO QUICK SEARCH CARD (HIGH UTILITY WIDGET) -->
+      <div class="max-w-5xl mx-auto bg-white rounded-3xl border border-slate-200/90 shadow-xl shadow-slate-200/50 p-5 sm:p-7">
+        <div class="flex items-center justify-between pb-4 mb-4 border-b border-slate-100">
+          <div class="flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+            <span class="text-xs font-bold text-slate-700 uppercase tracking-wider">Quick Proposal Search</span>
+          </div>
+          <span class="text-xs text-rose-900 font-semibold">10,000+ Profiles Active This Week</span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3.5 items-center">
+          
+          <!-- Looking for -->
+          <div class="bg-slate-50 p-3 rounded-2xl border border-slate-200">
+            <label class="block text-[11px] font-bold text-slate-500 uppercase tracking-wider">I am looking for</label>
+            <select class="w-full bg-transparent text-sm font-bold text-slate-900 focus:outline-hidden mt-0.5 cursor-pointer">
+              <option>Sindhi Bride</option>
+              <option>Sindhi Groom</option>
+            </select>
+          </div>
+
+          <!-- Age Bracket -->
+          <div class="bg-slate-50 p-3 rounded-2xl border border-slate-200">
+            <label class="block text-[11px] font-bold text-slate-500 uppercase tracking-wider">Age Range</label>
+            <select class="w-full bg-transparent text-sm font-bold text-slate-900 focus:outline-hidden mt-0.5 cursor-pointer">
+              <option>22 to 27 Years</option>
+              <option selected>25 to 30 Years</option>
+              <option>28 to 34 Years</option>
+              <option>32 to 40 Years</option>
+            </select>
+          </div>
+
+          <!-- Sub-Community -->
+          <div class="bg-slate-50 p-3 rounded-2xl border border-slate-200">
+            <label class="block text-[11px] font-bold text-slate-500 uppercase tracking-wider">Sub-Community</label>
+            <select class="w-full bg-transparent text-sm font-bold text-slate-900 focus:outline-hidden mt-0.5 cursor-pointer">
+              <option>Any Sub-Community</option>
+              <option selected>Amil</option>
+              <option>Bhaiband (Vani)</option>
+              <option>Sahiti</option>
+              <option>Shikarpuri</option>
+              <option>Larkana / Thattai</option>
+            </select>
+          </div>
+
+          <!-- Nukh / Exogamy -->
+          <div class="bg-slate-50 p-3 rounded-2xl border border-slate-200">
+            <label class="block text-[11px] font-bold text-slate-500 uppercase tracking-wider">Nukh / Gotra</label>
+            <select class="w-full bg-transparent text-sm font-bold text-slate-900 focus:outline-hidden mt-0.5 cursor-pointer">
+              <option selected>Exclude My Own Nukh</option>
+              <option>Chandiramani</option>
+              <option>Advani</option>
+              <option>Vaswani</option>
+              <option>Gidwani</option>
+              <option>Makhija</option>
+            </select>
+          </div>
+
+          <!-- CTA Button -->
+          <div>
+            <button onclick="openAuthModal('signup')" class="w-full h-[58px] bg-rose-900 hover:bg-rose-950 text-white rounded-2xl font-bold text-sm shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 cursor-pointer active:scale-95">
+              <span>Find Matches</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Trust Badges Strip below search -->
+        <div class="flex flex-wrap items-center justify-center sm:justify-between gap-4 mt-6 pt-5 border-t border-slate-100 text-xs text-slate-600 font-medium">
+          <div class="flex items-center gap-1.5">
+            <svg class="w-4 h-4 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+            <span>100% Aadhaar &amp; DigiLocker Verified</span>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <svg class="w-4 h-4 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+            <span>Strict Nukh Exogamy Algorithm</span>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <svg class="w-4 h-4 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+            <span>Mutual Consent Video Calling</span>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <svg class="w-4 h-4 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+            <span>Nominal ₹149 Spam-Free Activation</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== 3 CORE TRUST PILLARS ==================== -->
+  <section id="nukh-system" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <h2 class="font-serif-brand text-3xl sm:text-4xl font-bold text-slate-950">
+          Designed for the Real Needs of Sindhi Families
+        </h2>
+        <p class="mt-3 text-slate-600 text-sm sm:text-base">
+          Generic platforms fail because they treat Sindhis as a generic checkbox. We built our platform around authentic Sindhi matrimonial traditions.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Pillar 1 -->
+        <div class="bg-[#FAF8F5] p-8 rounded-3xl border border-slate-200/80 hover:border-amber-400/60 transition-all duration-300">
+          <div class="w-12 h-12 rounded-2xl bg-amber-100 text-amber-900 flex items-center justify-center text-xl font-bold mb-6">
+            🌳
+          </div>
+          <h3 class="font-serif-brand text-xl font-bold text-slate-950 mb-3">Authentic Nukh Exogamy</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            In Sindhi tradition, marrying within the same ancestral clan (*Nukh*) is discouraged. Our automated engine records both your <strong>Paternal Nukh</strong> and <strong>Maternal Mosal</strong>, filtering out same-clan proposals automatically.
+          </p>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div class="bg-[#FAF8F5] p-8 rounded-3xl border border-slate-200/80 hover:border-amber-400/60 transition-all duration-300">
+          <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-900 flex items-center justify-center text-xl font-bold mb-6">
+            🛡️
+          </div>
+          <h3 class="font-serif-brand text-xl font-bold text-slate-950 mb-3">100% Verified Identities</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Every candidate must complete a verified DigiLocker Aadhaar check (or Passport for NRIs) backed by a ₹149 activation fee. This keeps casual daters and scammers out, preserving a safe environment for respectable families.
+          </p>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div class="bg-[#FAF8F5] p-8 rounded-3xl border border-slate-200/80 hover:border-amber-400/60 transition-all duration-300">
+          <div class="w-12 h-12 rounded-2xl bg-rose-100 text-rose-900 flex items-center justify-center text-xl font-bold mb-6">
+            🔒
+          </div>
+          <h3 class="font-serif-brand text-xl font-bold text-slate-950 mb-3">Mutual Consent Video Calls</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            No stranger can ever cold-call you. Direct in-app video and audio calls connect only between mutually accepted matches during agreed calling hours—with zero phone numbers ever shared.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== HOW IT WORKS (3 SIMPLE STEPS) ==================== -->
+  <section id="how-it-works" class="py-20 bg-slate-50 border-y border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-xs font-bold text-rose-900 uppercase tracking-widest">Simple &amp; Respectful Journey</span>
+        <h2 class="font-serif-brand text-3xl sm:text-4xl font-bold text-slate-950 mt-1">
+          How Sindhi Sangam Works
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Step 1 -->
+        <div class="bg-white p-7 rounded-2xl border border-slate-200 relative">
+          <div class="w-9 h-9 rounded-full bg-rose-900 text-white font-extrabold text-sm flex items-center justify-center mb-4">1</div>
+          <h4 class="text-base font-bold text-slate-900 mb-2">Create Profile &amp; Verify ID</h4>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Enter your education, career, sub-community (Amil, Bhaiband, etc.), and Paternal/Maternal Nukh. Complete instant Aadhaar OTP verification.
+          </p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="bg-white p-7 rounded-2xl border border-slate-200 relative">
+          <div class="w-9 h-9 rounded-full bg-rose-900 text-white font-extrabold text-sm flex items-center justify-center mb-4">2</div>
+          <h4 class="text-base font-bold text-slate-900 mb-2">Discover Compatible Matches</h4>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Filter profiles by age, city, business turnover, or 36-Guna Kundli score. Toggle between Candidate Mode and Parent Mode anytime.
+          </p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="bg-white p-7 rounded-2xl border border-slate-200 relative">
+          <div class="w-9 h-9 rounded-full bg-rose-900 text-white font-extrabold text-sm flex items-center justify-center mb-4">3</div>
+          <h4 class="text-base font-bold text-slate-900 mb-2">Connect Securely &amp; Meet</h4>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Send an interest. Once accepted, chat in real time or initiate a private in-app audio/video call without revealing personal phone numbers.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== SINDHI SUB-COMMUNITIES SEO DIRECTORY ==================== -->
+  <section id="communities" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+        <div>
+          <span class="text-xs font-bold text-rose-900 uppercase tracking-widest">Heritage Directory</span>
+          <h2 class="font-serif-brand text-3xl sm:text-4xl font-bold text-slate-950 mt-1">
+            Browse by Sindhi Sub-Community
+          </h2>
+          <p class="text-sm text-slate-600 mt-2">
+            Find candidates belonging to your specific cultural lineage and regional heritage.
+          </p>
+        </div>
+        <a href="#browse-all" class="text-xs font-bold text-rose-900 hover:underline">View All 18 Sub-Communities →</a>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+        
+        <div class="p-5 rounded-2xl bg-[#FAF8F5] border border-slate-200 text-center hover:border-rose-900 hover:shadow-xs transition-all cursor-pointer">
+          <div class="text-2xl mb-2">📚</div>
+          <h3 class="text-sm font-bold text-slate-900">Amil</h3>
+          <p class="text-[11px] text-slate-500 mt-0.5">Civil &amp; Corporate</p>
+          <span class="inline-block mt-3 text-[10px] font-bold text-rose-900 bg-rose-50 px-2 py-0.5 rounded-full">2,450+ Profiles</span>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-[#FAF8F5] border border-slate-200 text-center hover:border-rose-900 hover:shadow-xs transition-all cursor-pointer">
+          <div class="text-2xl mb-2">💎</div>
+          <h3 class="text-sm font-bold text-slate-900">Bhaiband</h3>
+          <p class="text-[11px] text-slate-500 mt-0.5">Business &amp; Trade</p>
+          <span class="inline-block mt-3 text-[10px] font-bold text-rose-900 bg-rose-50 px-2 py-0.5 rounded-full">3,890+ Profiles</span>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-[#FAF8F5] border border-slate-200 text-center hover:border-rose-900 hover:shadow-xs transition-all cursor-pointer">
+          <div class="text-2xl mb-2">🌾</div>
+          <h3 class="text-sm font-bold text-slate-900">Sahiti</h3>
+          <p class="text-[11px] text-slate-500 mt-0.5">Central Sindh Roots</p>
+          <span class="inline-block mt-3 text-[10px] font-bold text-rose-900 bg-rose-50 px-2 py-0.5 rounded-full">1,120+ Profiles</span>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-[#FAF8F5] border border-slate-200 text-center hover:border-rose-900 hover:shadow-xs transition-all cursor-pointer">
+          <div class="text-2xl mb-2">🏛️</div>
+          <h3 class="text-sm font-bold text-slate-900">Shikarpuri</h3>
+          <p class="text-[11px] text-slate-500 mt-0.5">Finance &amp; Banking</p>
+          <span class="inline-block mt-3 text-[10px] font-bold text-rose-900 bg-rose-50 px-2 py-0.5 rounded-full">980+ Profiles</span>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-[#FAF8F5] border border-slate-200 text-center hover:border-rose-900 hover:shadow-xs transition-all cursor-pointer">
+          <div class="text-2xl mb-2">⛵</div>
+          <h3 class="text-sm font-bold text-slate-900">Thattai</h3>
+          <p class="text-[11px] text-slate-500 mt-0.5">Heritage Sindh Hub</p>
+          <span class="inline-block mt-3 text-[10px] font-bold text-rose-900 bg-rose-50 px-2 py-0.5 rounded-full">640+ Profiles</span>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-[#FAF8F5] border border-slate-200 text-center hover:border-rose-900 hover:shadow-xs transition-all cursor-pointer">
+          <div class="text-2xl mb-2">🌴</div>
+          <h3 class="text-sm font-bold text-slate-900">Larkana &amp; Dadu</h3>
+          <p class="text-[11px] text-slate-500 mt-0.5">Northern Roots</p>
+          <span class="inline-block mt-3 text-[10px] font-bold text-rose-900 bg-rose-50 px-2 py-0.5 rounded-full">530+ Profiles</span>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== SINDHI GLOBAL DIASPORA CITIES (SEO) ==================== -->
+  <section class="py-16 bg-slate-50 border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <h3 class="font-serif-brand text-2xl font-bold text-slate-950">
+          Connecting Sindhis in Every Major City &amp; Global Hub
+        </h3>
+        <p class="text-xs text-slate-500 mt-1">Direct community presence across India and worldwide.</p>
+      </div>
+
+      <div class="flex flex-wrap items-center justify-center gap-2.5 text-xs">
+        <span class="px-3 py-1.5 rounded-xl bg-white border border-slate-200 font-semibold text-slate-700 hover:border-rose-900 cursor-pointer">Mumbai &amp; Ulhasnagar (3,200+)</span>
+        <span class="px-3 py-1.5 rounded-xl bg-white border border-slate-200 font-semibold text-slate-700 hover:border-rose-900 cursor-pointer">Pune &amp; Pimpri (1,850+)</span>
+        <span class="px-3 py-1.5 rounded-xl bg-white border border-slate-200 font-semibold text-slate-700 hover:border-rose-900 cursor-pointer">Ahmedabad &amp; Gandhidham (2,100+)</span>
+        <span class="px-3 py-1.5 rounded-xl bg-white border border-slate-200 font-semibold text-slate-700 hover:border-rose-900 cursor-pointer">Dubai &amp; GCC / UAE (1,400+)</span>
+        <span class="px-3 py-1.5 rounded-xl bg-white border border-slate-200 font-semibold text-slate-700 hover:border-rose-900 cursor-pointer">Jaipur &amp; Ajmer (920+)</span>
+        <span class="px-3 py-1.5 rounded-xl bg-white border border-slate-200 font-semibold text-slate-700 hover:border-rose-900 cursor-pointer">Indore &amp; Bhopal (840+)</span>
+        <span class="px-3 py-1.5 rounded-xl bg-white border border-slate-200 font-semibold text-slate-700 hover:border-rose-900 cursor-pointer">London &amp; UK (620+)</span>
+        <span class="px-3 py-1.5 rounded-xl bg-white border border-slate-200 font-semibold text-slate-700 hover:border-rose-900 cursor-pointer">USA &amp; Canada (780+)</span>
+        <span class="px-3 py-1.5 rounded-xl bg-white border border-slate-200 font-semibold text-slate-700 hover:border-rose-900 cursor-pointer">Spain &amp; Canary Islands (350+)</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== TRANSPARENT PRICING PLANS SECTION ==================== -->
+  <section id="pricing" class="py-20 bg-white border-t border-slate-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-xs font-bold text-rose-900 uppercase tracking-widest">Zero Commercial Exploitation</span>
+        <h2 class="font-serif-brand text-3xl sm:text-4xl font-bold text-slate-950 mt-1">
+          Simple, Fair &amp; Community-Friendly Pricing
+        </h2>
+        <p class="text-sm text-slate-600 mt-2">
+          No ₹5,000 corporate traps. We charge a minimal nominal fee to maintain 100% Aadhaar verification and zero spam.
+        </p>
+      </div>
+
+      <!-- One-time Activation Step Banner -->
+      <div class="max-w-3xl mx-auto bg-amber-50 border border-amber-300/80 rounded-2xl p-5 mb-12 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="flex items-center gap-3.5">
+          <div class="w-10 h-10 rounded-xl bg-amber-500 text-white flex items-center justify-center font-bold text-lg shrink-0">
+            ✓
+          </div>
+          <div>
+            <span class="text-[10px] font-bold uppercase tracking-wider bg-rose-900 text-white px-2 py-0.5 rounded">Mandatory Step 1</span>
+            <h4 class="text-sm font-bold text-slate-900 mt-1">One-Time Profile Activation Fee</h4>
+            <p class="text-xs text-slate-600">Includes DigiLocker / Passport verification, Verified Blue Badge, and 5 Initial Interests.</p>
+          </div>
+        </div>
+        <div class="text-right shrink-0">
+          <span class="text-2xl font-extrabold text-rose-950">₹149</span>
+          <span class="text-xs text-slate-500 block">($5 for NRIs)</span>
+        </div>
+      </div>
+
+      <!-- 3 Subscription Tiers -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        
+        <!-- SILVER -->
+        <div class="bg-white rounded-3xl border border-slate-200 p-7 flex flex-col justify-between hover:border-slate-300 transition-all">
+          <div>
+            <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">SILVER PASS</span>
+            <div class="mt-3 flex items-baseline">
+              <span class="text-3xl font-extrabold text-slate-950">₹149</span>
+              <span class="text-xs text-slate-500 ml-1">/ 1 Month ($5)</span>
+            </div>
+            <p class="text-xs text-slate-500 mt-1">Ideal for checking immediate proposals</p>
+            
+            <ul class="mt-6 space-y-3 text-xs text-slate-700">
+              <li class="flex items-center gap-2">✓ <strong class="text-rose-900 font-bold">15 Verified Contact Unlocks</strong></li>
+              <li class="flex items-center gap-2">✓ Unlimited In-App Real-time Chat</li>
+              <li class="flex items-center gap-2">✓ View Who Visited Your Profile</li>
+              <li class="flex items-center gap-2 text-slate-400">✗ No In-App Video / Audio Calling</li>
+              <li class="flex items-center gap-2 text-slate-400">✗ Basic Kundli Only (No PDF)</li>
+            </ul>
+          </div>
+          <button onclick="openAuthModal('signup')" class="mt-8 w-full py-3 bg-slate-100 hover:bg-slate-200 text-slate-900 font-bold rounded-xl text-xs transition-colors cursor-pointer">
+            Get Started
+          </button>
+        </div>
+
+        <!-- GOLD (HERO PLAN) -->
+        <div class="bg-white rounded-3xl border-2 border-amber-500 p-7 flex flex-col justify-between shadow-xl relative">
+          <div class="absolute -top-3.5 left-1/2 transform -translate-x-1/2 bg-amber-500 text-white font-extrabold text-[10px] uppercase px-4 py-1 rounded-full shadow-sm tracking-wider">
+            Most Popular in Community
+          </div>
+          <div>
+            <span class="text-xs font-bold text-amber-900 uppercase tracking-wider">GOLD PASS</span>
+            <div class="mt-3 flex items-baseline">
+              <span class="text-3xl font-extrabold text-rose-950">₹749</span>
+              <span class="text-xs text-slate-500 ml-1">/ 6 Months ($25)</span>
+            </div>
+            <p class="text-xs text-emerald-700 font-bold mt-1">Just ₹125/month • Complete Package</p>
+            
+            <ul class="mt-6 space-y-3 text-xs text-slate-800">
+              <li class="flex items-center gap-2 font-bold">✓ <strong class="text-rose-900 font-extrabold">60 Verified Contact Unlocks</strong></li>
+              <li class="flex items-center gap-2 font-bold">✓ Unlimited Audio &amp; Video Calling</li>
+              <li class="flex items-center gap-2 font-bold">✓ Full 36-Guna Kundli + PDF Download</li>
+              <li class="flex items-center gap-2">✓ 1 Free Monthly Profile Boost</li>
+              <li class="flex items-center gap-2">✓ Unlimited In-App Real-time Chat</li>
+            </ul>
+          </div>
+          <button onclick="openAuthModal('signup')" class="mt-8 w-full py-3 bg-rose-900 hover:bg-rose-950 text-white font-bold rounded-xl text-xs transition-all shadow-md cursor-pointer">
+            Activate Gold Pass
+          </button>
+        </div>
+
+        <!-- PLATINUM -->
+        <div class="bg-white rounded-3xl border border-slate-200 p-7 flex flex-col justify-between hover:border-slate-300 transition-all">
+          <div>
+            <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">PLATINUM ELITE</span>
+            <div class="mt-3 flex items-baseline">
+              <span class="text-3xl font-extrabold text-slate-950">₹1,499</span>
+              <span class="text-xs text-slate-500 ml-1">/ 1 Year ($48)</span>
+            </div>
+            <p class="text-xs text-slate-500 mt-1">For HNIs, Business Families &amp; NRIs</p>
+            
+            <ul class="mt-6 space-y-3 text-xs text-slate-700">
+              <li class="flex items-center gap-2">✓ <strong class="text-rose-900 font-bold">150 Verified Contact Unlocks</strong></li>
+              <li class="flex items-center gap-2 font-semibold">✓ Audio &amp; Video Calling Included</li>
+              <li class="flex items-center gap-2 font-semibold">✓ Full 36-Guna Kundli + PDF Download</li>
+              <li class="flex items-center gap-2 font-semibold">✓ Incognito / Stealth Browsing Mode</li>
+              <li class="flex items-center gap-2 font-semibold">✓ 3 Free Monthly Profile Boosts</li>
+            </ul>
+          </div>
+          <button onclick="openAuthModal('signup')" class="mt-8 w-full py-3 bg-slate-100 hover:bg-slate-200 text-slate-900 font-bold rounded-xl text-xs transition-colors cursor-pointer">
+            Choose Platinum
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== SINDHI REAL SUCCESS STORIES ==================== -->
+  <section id="stories" class="py-20 bg-slate-50 border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-xs font-bold text-rose-900 uppercase tracking-widest">Real Sindhi Unions</span>
+        <h2 class="font-serif-brand text-3xl sm:text-4xl font-bold text-slate-950 mt-1">
+          Celebrating Our Blessed Matches
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        
+        <div class="bg-white p-7 rounded-3xl border border-slate-200 flex flex-col justify-between shadow-2xs">
+          <div>
+            <div class="text-amber-500 text-sm mb-3">★★★★★</div>
+            <p class="text-xs sm:text-sm text-slate-700 leading-relaxed italic">
+              "Finding a match in generic matrimony was exhausting because nobody understood Nukh rules. On Sindhi Sangam, the exogamy filter ensured I only connected with non-Chandiramani Amil families. We connected via in-app video call first, and our parents met in Ulhasnagar a week later."
+            </p>
+          </div>
+          <div class="flex items-center gap-3.5 mt-6 pt-5 border-t border-slate-100">
+            <div class="w-11 h-11 rounded-full bg-rose-900 text-amber-300 font-bold flex items-center justify-center text-sm">KS</div>
+            <div>
+              <h5 class="text-xs font-bold text-slate-900">Karan &amp; Simran (Chandiramani &amp; Advani)</h5>
+              <p class="text-[11px] text-slate-500">Mumbai &amp; Dubai • Married Jan 2026</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white p-7 rounded-3xl border border-slate-200 flex flex-col justify-between shadow-2xs">
+          <div>
+            <div class="text-amber-500 text-sm mb-3">★★★★★</div>
+            <p class="text-xs sm:text-sm text-slate-700 leading-relaxed italic">
+              "As a father in Pune, I was skeptical about online matrimony until I saw the Parent Mode feature. It let me review the family’s ancestral background and maternal Mosal without confusion. The ₹149 verification fee makes sure only genuine families are active."
+            </p>
+          </div>
+          <div class="flex items-center gap-3.5 mt-6 pt-5 border-t border-slate-100">
+            <div class="w-11 h-11 rounded-full bg-rose-900 text-amber-300 font-bold flex items-center justify-center text-sm">RP</div>
+            <div>
+              <h5 class="text-xs font-bold text-slate-900">Ravi Makhija &amp; Pooja Chhabria</h5>
+              <p class="text-[11px] text-slate-500">Pune &amp; Ahmedabad • Married March 2026</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== FREQUENTLY ASKED QUESTIONS (SEO ACCORDION) ==================== -->
+  <section id="faq" class="py-20 bg-white border-t border-slate-200">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-12">
+        <h2 class="font-serif-brand text-3xl font-bold text-slate-950">
+          Frequently Asked Questions
+        </h2>
+        <p class="text-xs text-slate-500 mt-1">Everything you need to know about safety, Nukh, and calling.</p>
+      </div>
+
+      <div class="space-y-4">
+        
+        <div class="border border-slate-200 rounded-2xl p-5">
+          <h4 class="text-sm font-bold text-slate-900">Why is there a mandatory ₹149 / $5 one-time activation fee?</h4>
+          <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+            Unlike commercial platforms that allow millions of dormant or fake accounts, our ₹149 fee covers official DigiLocker / Passport verification and ensures that 100% of candidates on our platform are genuine, active, and serious about marriage.
+          </p>
+        </div>
+
+        <div class="border border-slate-200 rounded-2xl p-5">
+          <h4 class="text-sm font-bold text-slate-900">How does the Nukh Exogamy filter work?</h4>
+          <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+            During profile setup, you provide your Paternal Nukh and Maternal Nukh (Mosal). When browsing, our automated filter automatically excludes proposals that share your direct paternal lineage, strictly adhering to traditional Sindhi custom.
+          </p>
+        </div>
+
+        <div class="border border-slate-200 rounded-2xl p-5">
+          <h4 class="text-sm font-bold text-slate-900">Can anyone call me on audio or video randomly?</h4>
+          <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+            Never. In-app audio and video calling is strictly protected by a <strong>Mutual Consent Framework</strong>. You can only be called by an accepted connection during your pre-set calling hours. Your mobile number is never exposed.
+          </p>
+        </div>
+
+        <div class="border border-slate-200 rounded-2xl p-5">
+          <h4 class="text-sm font-bold text-slate-900">What is the difference between Candidate Mode and Parent Mode?</h4>
+          <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+            Candidates can view lifestyle attributes, personal career credentials, and chat directly. Parents can switch with one tap to focus on family background, parental occupations, joint family values, and 36-Guna Kundli charts.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== CONVERSION CTA BANNER ==================== -->
+  <section class="bg-rose-950 text-white py-16">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-serif-brand text-3xl sm:text-4xl font-bold">
+        Find Your Blessed Sindhi Life Partner Today
+      </h2>
+      <p class="mt-3 text-rose-200/90 text-sm max-w-xl mx-auto">
+        Join thousands of verified Amil, Bhaiband, Sahiti, and Shikarpuri families honoring traditions with modern convenience.
+      </p>
+      <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <button onclick="openAuthModal('signup')" class="w-full sm:w-auto px-8 py-3.5 bg-amber-400 hover:bg-amber-300 text-rose-950 rounded-xl font-extrabold text-sm shadow-lg transition-all cursor-pointer">
+          Create Free Profile Now
+        </button>
+        <button onclick="openAuthModal('signin')" class="w-full sm:w-auto px-8 py-3.5 bg-rose-900/60 hover:bg-rose-900 text-white border border-rose-800 rounded-xl font-bold text-sm transition-all cursor-pointer">
+          Sign In to Your Account
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== RICH SEO FOOTER ==================== -->
+  <footer class="bg-white border-t border-slate-200 pt-16 pb-12 text-xs text-slate-500">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 mb-12">
+      
+      <!-- Col 1: Brand Info -->
+      <div class="col-span-2 space-y-3">
+        <div class="flex items-center gap-2">
+          <div class="w-7 h-7 rounded-lg bg-rose-900 flex items-center justify-center text-amber-400 font-bold text-xs">
+            SS
+          </div>
+          <span class="font-serif-brand text-lg font-bold text-rose-950">Sindhi Sangam</span>
+        </div>
+        <p class="text-xs text-slate-600 leading-relaxed max-w-sm">
+          The premier community-first matrimonial platform dedicated exclusively to preserving Sindhi cultural roots, Nukh lineage exogamy, and high-trust family matchmaking.
+        </p>
+        <p class="text-[11px] text-slate-400">
+          Govt of India Intermediary Compliance • ISO 27001 Certified Security
+        </p>
+      </div>
+
+      <!-- Col 2: Sub-Communities (SEO) -->
+      <div>
+        <h5 class="font-bold text-slate-900 uppercase tracking-wider mb-3">Sub-Communities</h5>
+        <ul class="space-y-2">
+          <li><a href="#" class="hover:text-rose-900">Amil Matrimony</a></li>
+          <li><a href="#" class="hover:text-rose-900">Bhaiband (Vani) Matrimony</a></li>
+          <li><a href="#" class="hover:text-rose-900">Sahiti Matrimony</a></li>
+          <li><a href="#" class="hover:text-rose-900">Shikarpuri Matrimony</a></li>
+          <li><a href="#" class="hover:text-rose-900">Thattai &amp; Dadu Matrimony</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Global Cities (SEO) -->
+      <div>
+        <h5 class="font-bold text-slate-900 uppercase tracking-wider mb-3">Popular Hubs</h5>
+        <ul class="space-y-2">
+          <li><a href="#" class="hover:text-rose-900">Mumbai Sindhi Matrimony</a></li>
+          <li><a href="#" class="hover:text-rose-900">Ulhasnagar Matrimony</a></li>
+          <li><a href="#" class="hover:text-rose-900">Ahmedabad Sindhis</a></li>
+          <li><a href="#" class="hover:text-rose-900">Dubai &amp; UAE Sindhis</a></li>
+          <li><a href="#" class="hover:text-rose-900">London &amp; USA Sindhis</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Trust & Support -->
+      <div>
+        <h5 class="font-bold text-slate-900 uppercase tracking-wider mb-3">Trust &amp; Legal</h5>
+        <ul class="space-y-2">
+          <li><a href="#" class="hover:text-rose-900">Aadhaar Verification Guide</a></li>
+          <li><a href="#" class="hover:text-rose-900">Nukh Exogamy Rules</a></li>
+          <li><a href="#" class="hover:text-rose-900">Privacy Policy</a></li>
+          <li><a href="#" class="hover:text-rose-900">Terms of Service</a></li>
+          <li><a href="#" class="hover:text-rose-900">Community Grievance Officer</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Bottom Copyright -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-3 text-slate-400 text-[11px]">
+      <p>© 2026 Sindhi Sangam Matrimony. All rights reserved.</p>
+      <p>Made with devotion for the Global Sindhi Community.</p>
+    </div>
+  </footer>
+
+  <!-- ==================== INTERACTIVE SIGNUP / SIGNIN MODAL ==================== -->
+  <div id="authModal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-md w-full border border-slate-200 shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-200">
+      
+      <!-- Modal Header -->
+      <div class="bg-gradient-to-r from-rose-950 to-rose-900 text-white p-6 text-center relative">
+        <button onclick="closeAuthModal()" class="absolute top-4 right-4 text-rose-300 hover:text-white text-2xl font-bold cursor-pointer">&times;</button>
+        <div class="w-10 h-10 rounded-xl bg-amber-400 text-rose-950 font-bold flex items-center justify-center mx-auto mb-2 text-base shadow-sm">
+          SS
+        </div>
+        <h3 id="authModalTitle" class="font-serif-brand text-xl font-bold">Register on Sindhi Sangam</h3>
+        <p id="authModalSubtitle" class="text-xs text-rose-200 mt-0.5">Find verified life partners in the Sindhi community</p>
+      </div>
+
+      <!-- Modal Form Body -->
+      <div class="p-6 space-y-4">
+        
+        <!-- Profile Created For -->
+        <div id="authCreatedForSection">
+          <label class="block text-xs font-bold text-slate-700 mb-1.5">Profile Created For</label>
+          <div class="grid grid-cols-3 gap-2 text-xs">
+            <label class="p-2 rounded-xl border border-rose-900 bg-rose-50/70 font-semibold text-rose-950 text-center cursor-pointer">
+              <input type="radio" name="profileFor" checked class="hidden"> Self
+            </label>
+            <label class="p-2 rounded-xl border border-slate-200 hover:bg-slate-50 font-medium text-slate-700 text-center cursor-pointer">
+              <input type="radio" name="profileFor" class="hidden"> Parent
+            </label>
+            <label class="p-2 rounded-xl border border-slate-200 hover:bg-slate-50 font-medium text-slate-700 text-center cursor-pointer">
+              <input type="radio" name="profileFor" class="hidden"> Sibling
+            </label>
+          </div>
+        </div>
+
+        <!-- Phone Number Input with OTP -->
+        <div>
+          <label class="block text-xs font-bold text-slate-700 mb-1">Mobile Number</label>
+          <div class="flex gap-2">
+            <select class="bg-slate-100 border border-slate-300 rounded-xl px-2.5 text-xs font-bold text-slate-700">
+              <option>+91 (IND)</option>
+              <option>+971 (UAE)</option>
+              <option>+1 (USA)</option>
+              <option>+44 (UK)</option>
+            </select>
+            <input type="tel" placeholder="Enter 10-digit number" class="w-full text-xs p-3 bg-slate-50 border border-slate-300 rounded-xl focus:outline-hidden focus:border-rose-900 font-semibold">
+          </div>
+        </div>
+
+        <!-- Sub-Community Quick Selector -->
+        <div id="authSubCommunitySection">
+          <label class="block text-xs font-bold text-slate-700 mb-1">Sindhi Sub-Community</label>
+          <select class="w-full text-xs p-3 bg-slate-50 border border-slate-300 rounded-xl font-medium focus:outline-hidden focus:border-rose-900">
+            <option>Select Sub-Community</option>
+            <option>Amil</option>
+            <option>Bhaiband (Sindhi Vani)</option>
+            <option>Sahiti</option>
+            <option>Shikarpuri</option>
+            <option>Thattai / Larkana / Dadu</option>
+          </select>
+        </div>
+
+        <!-- Action Button -->
+        <button onclick="handleAuthSubmit()" class="w-full py-3.5 bg-rose-900 hover:bg-rose-950 text-white rounded-xl font-bold text-xs shadow-md transition-all cursor-pointer">
+          Verify via OTP &amp; Continue →
+        </button>
+
+        <div class="relative text-center my-3">
+          <span class="bg-white px-2 text-[11px] text-slate-400 relative z-10">or continue with</span>
+          <div class="absolute inset-0 top-1/2 border-t border-slate-200"></div>
+        </div>
+
+        <!-- Google Social Login -->
+        <button onclick="handleAuthSubmit()" class="w-full py-2.5 bg-white border border-slate-300 hover:bg-slate-50 text-slate-700 rounded-xl font-semibold text-xs flex items-center justify-center gap-2 transition-colors cursor-pointer">
+          <svg class="w-4 h-4" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/></svg>
+          Google Account
+        </button>
+
+        <p class="text-[10px] text-slate-400 text-center leading-relaxed">
+          By continuing, you agree to our Terms of Service, Privacy Policy &amp; Nukh Exogamy Code.
+        </p>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div id="toast" class="fixed bottom-6 right-6 bg-slate-950 text-white text-xs font-medium px-4 py-3 rounded-xl shadow-lg border border-slate-800 flex items-center gap-2.5 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none z-50">
+    <div class="w-5 h-5 rounded-full bg-emerald-500 text-slate-950 flex items-center justify-center font-bold text-[10px]">✓</div>
+    <span id="toastMsg">Action completed</span>
+  </div>
+
+  <!-- SCRIPT LOGIC -->
+  <script>
+    function openAuthModal(type) {
+      const modal = document.getElementById('authModal');
+      const title = document.getElementById('authModalTitle');
+      const sub = document.getElementById('authModalSubtitle');
+      const createdFor = document.getElementById('authCreatedForSection');
+      const subCommunity = document.getElementById('authSubCommunitySection');
+
+      if (type === 'signin') {
+        title.textContent = 'Sign In to Your Account';
+        sub.textContent = 'Welcome back! Access your verified matches';
+        createdFor.classList.add('hidden');
+        subCommunity.classList.add('hidden');
+      } else {
+        title.textContent = 'Register on Sindhi Sangam';
+        sub.textContent = 'Find verified life partners in the Sindhi community';
+        createdFor.classList.remove('hidden');
+        subCommunity.classList.remove('hidden');
+      }
+
+      modal.classList.remove('hidden');
+    }
+
+    function closeAuthModal() {
+      document.getElementById('authModal').classList.add('hidden');
+    }
+
+    function handleAuthSubmit() {
+      closeAuthModal();
+      showToast('OTP sent to your mobile number! Verifying DigiLocker...');
+    }
+
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toastMsg');
+      toastMsg.textContent = message;
+      toast.classList.remove('translate-y-20', 'opacity-0');
+      setTimeout(() => {
+        toast.classList.add('translate-y-20', 'opacity-0');
+      }, 3500);
+    }
+  </script>
+
+</body>
+</html>
